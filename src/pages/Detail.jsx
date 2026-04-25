@@ -40,13 +40,13 @@ export default function Detail() {
         ← Kembali
       </button>
 
-      <div className="bg-white rounded-xl p-6 grid md:grid-cols-2 gap-8 shadow">
+      <div className="bg-white rounded-xl p-4 md:p-6 grid md:grid-cols-2 gap-6 md:gap-8 shadow">
 
         {/* 🖼️ GAMBAR */}
         <div>
           <img
             src={product.image}
-            className="w-full h-96 object-cover rounded-lg"
+            className="w-full h-64 md:h-96 object-cover rounded-lg"
           />
 
           <div className="flex gap-2 mt-3">
@@ -103,7 +103,7 @@ export default function Detail() {
           </div>
 
           {/* 🛒 BUTTON */}
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <button
               onClick={handleAddToCart}
               className="bg-shopee text-white px-6 py-3 rounded-lg hover:bg-shopee-dark transition"

@@ -18,6 +18,8 @@ export default function ProductCard({ product }) {
 
     if (!img || !cart) {
       addToCart(product); // fallback
+      // 🔥 TRIGGER SHAKE CART
+      window.dispatchEvent(new Event("cart:add"));
       return;
     }
 
@@ -61,16 +63,15 @@ export default function ProductCard({ product }) {
       >
         {/* 🔥 REF DI SINI */}
         <img
-          ref={imgRef}
           src={product.image}
-          className="w-full h-40 object-cover"
+          className="w-full h-32 sm:h-40 object-cover"
         />
 
-        <h3 className="mt-2 text-sm line-clamp-2">
+        <h3 className="mt-2 text-xs sm:text-sm line-clamp-2">
           {product.name}
         </h3>
 
-        <p className="text-shopee font-bold mt-1">
+        <p className="text-shopee font-bold text-sm sm:text-base">
           Rp {product.price.toLocaleString()}
         </p>
 
